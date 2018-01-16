@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>GaleriaApp</title>
+    <link rel="stylesheet" href="app.global.css">
+  </head>
+  <body>
+    <div class="titlebar">
+      <div id="winClose" class="pull-right">X</div>
+    </div>
+
+    <div class="container">
+      <h1>Galeria
+        <div id="areaBotoesMenu">
+          <button class="btn btn-xs btn-primary btnMenu">Imagens</button>        
+          <button class="btn btn-xs btn-primary btnMenu">Documentos</button>        
+          <button class="btn btn-xs btn-primary btnMenu">Downloads</button>        
+          <button class="btn btn-xs btn-primary btnMenu">Musicas</button>        
+          <button class="btn btn-xs btn-primary btnMenu">Videos</button>        
+        </div>
+      </h1>
+
+      <div class="row">
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-addon spanButton" id="btnVoltarCaminho">
+              <i class="glyphicon glyphicon-chevron-left"></i>
+            </span>
+
+            <input type="text" class="form-control" placeholder="Caminho" name="txtCaminho" id="txtCaminho">
+
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-chevron-up"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="arealistafiles">
+        <div id="listafiles"></div>
+      </div>
+
+      <div class="row margin-top10" id="areaVisualizar" style="display: none;">
+        <div class="col col-xs-2">
+          <ul class="nav nav-pills nav-stacked" id="areaHierarquia">
+
+          </ul>
+        </div>
+        <div class="col col-xs-10" id="areaVisualizarDireita">
+          <div id="setaEsquerda"><</div>
+          <div id="areaConteudo"></div>
+          <div id="setaDireita">></div>
+        </div>
+      </div>
+
+      <div class="row" id="areaCarregando" style="display: none;">
+        <div class="loader"></div>
+      </div>
+    </div>
+
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+  </body>
+</html>

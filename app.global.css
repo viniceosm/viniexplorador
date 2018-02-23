@@ -145,3 +145,39 @@ input, textarea, button, span.spanButton {
   100% { transform: rotate(360deg); }
 }
 /* /div loading */
+
+/* hierarquia */
+.area-acc .opt {
+    border: 0px;
+    border-top: 1px solid rgba(0,0,0,.125);
+}
+.opt {
+    padding: 4px;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.125);
+}
+.area-acc {
+    height: auto;
+    margin:12px 1px 6px 1px;
+    padding: 0px!important;
+
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+.btn-acc {
+    background-color: aliceblue;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    cursor: pointer;
+}
+.btn-acc:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+.spnIsAberto{
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    width: 20px;
+    text-align: center;
+    user-select: none;
+    float: right;
+}

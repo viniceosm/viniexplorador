@@ -69,25 +69,50 @@ const carregaArquivos = (sender) => {
   let arvoreDir = adicionaDirFilho(readDirs(caminhoDiretorio).map(adicionaTipoDir), caminhoDiretorio);
   montaHierarquia(arvoreDir, 0);
 
+  let arvoreDir2 = `<div class="area-acc">
+			<div class="btn-acc opt">clica
+				<span class="spnIsAberto">-</span>
+			</div>
+
+			<div class="area-acc">
+				<div class="btn-acc opt">vle
+					<span class="spnIsAberto">-</span>
+				</div>
+
+				<div class="opt">pel.jpg</div>
+				<div class="opt">fly.jpg</div>
+			</div>
+
+			<div class="area-acc">
+				<div class="btn-acc opt">reo
+					<span class="spnIsAberto">-</span>
+				</div>
+
+				<div class="opt">trokke.jpg</div>
+				<div class="opt">pdls.jpg</div>
+			</div>
+
+			<div class="opt">tye.jpg</div>
+			<div class="opt">gie.jpg</div>
+		</div>`;
+
   let dirs = readDirs(caminhoDiretorio).map(adicionaTipoDir);
   let noDirs = readNoDirs(caminhoDiretorio).map(adicionaTipoArquivo);
 
   let files = dirs.concat(noDirs);
-  sender.send('files carregados', files, caminhoDiretorio, arvoreDir);
+  sender.send('files carregados', files, caminhoDiretorio, arvoreDir, arvoreDir2);
 }
 
 function montaHierarquia(arr, nivel){
   `
     <li class="text-center">
-        <a href="dashboard#" data-toggle="dropdown" class="dropdown-toggle">
-            <i class="fa fa-bullhorn" aria-hidden="true"></i><br>
-            Propaganda
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+            pai
         </a>
         <ul class="dropdown-menu sub-menu min-width-100%">
             <li>
-                <a href="dashboard#">
-                    <i class="fa fa-television" aria-hidden="true"></i>
-                    Criar Propaganda
+                <a href="#">
+                    filho
                 </a>
             </li>
         </ul>
@@ -138,7 +163,7 @@ function createWindow () {
     carregaArquivos(mainWindow.webContents);
     mainWindow.webContents.send('appCarregou');
 
-    electron.globalShortcut.register('Alt+Left', () => {
+    /*electron.globalShortcut.register('Alt+Left', () => {
       if (mainWindow.isFocused()) {
         voltarCaminho(mainWindow.webContents)
         mainWindow.webContents.send('voltou caminho com atalho');
@@ -153,7 +178,7 @@ function createWindow () {
       if (mainWindow.isFocused()) {
         mainWindow.webContents.send('visualizarSetaDireita atalho');
       }
-    })
+    })*/
   })
   
   ipcMain.on('mudou caminho', (event, caminhoNovo) => {

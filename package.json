@@ -7,21 +7,21 @@
     "start": "electron ."
   },
   "repository": {
-		"type": "git",
-		"url": "https://github.com/viniceosm/viniexplorador"
-	},
+    "type": "git",
+    "url": "https://github.com/viniceosm/viniexplorador"
+  },
   "keywords": [
     "explorer",
     "explorador",
     "arquivos"
   ],
   "author": {
-		"name": "Vinicius Miiller Rebello",
-		"url": "https://github.com/viniceosm"
-	},
+    "name": "Vinicius Miiller Rebello",
+    "url": "https://github.com/viniceosm"
+  },
   "license": "ISC",
   "devDependencies": {
-    "electron": "~1.7.8"
+    "electron": "~1.8.2-beta5"
   },
   "dependencies": {
     "bootstrap": "^3.3.7"
